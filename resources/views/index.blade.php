@@ -249,7 +249,20 @@
                         <td class="py-1 px-3 font-normal">{{ $cert->branch }}</td>
                         <td class="py-1 px-3 font-normal">{{ $cert->start_date }}</td>
                         <td class="py-1 px-3 font-normal">{{ $cert->expired_date }}</td>
-                        <td class="py-1 px-3 font-normal">Click Here</td>
+                        <td class="py-1 px-3 font-normal text-center">
+                          @if ($cert->pdf_path)
+                            <a
+                              href="{{ asset('storage/' . $cert->pdf_path) }}"
+                              download
+                              class="text-blue-600 hover:underline"
+                              title="ISPS"
+                            >
+                              <i class="fas fa-download"></i>
+                            </a>
+                          @else
+                            <span class="text-gray-400 italic">No File</span>
+                          @endif
+                        </td>
                       </tr>
                       @endforeach
                     </tbody>
@@ -286,15 +299,28 @@
                       </tr>
                     </thead>
                     <tbody>
-                      @foreach ($iso9001Certificates as $cert)
-                      <tr>
-                        <td class="py-1 px-3 font-normal cursor-pointer">{{ $cert->no_certification }}</td>
-                        <td class="py-1 px-3 font-normal">{{ $cert->branch }}</td>
-                        <td class="py-1 px-3 font-normal">{{ $cert->start_date }}</td>
-                        <td class="py-1 px-3 font-normal">{{ $cert->expired_date }}</td>
-                        <td class="py-1 px-3 font-normal">Click Here</td>
-                      </tr>
-                      @endforeach
+                    @foreach ($iso9001Certificates as $cert)
+                    <tr>
+                      <td class="py-1 px-3 font-normal cursor-pointer">{{ $cert->no_certification }}</td>
+                      <td class="py-1 px-3 font-normal">{{ $cert->branch }}</td>
+                      <td class="py-1 px-3 font-normal">{{ $cert->start_date }}</td>
+                      <td class="py-1 px-3 font-normal">{{ $cert->expired_date }}</td>
+                      <td class="py-1 px-3 font-normal text-center">
+                        @if ($cert->pdf_path)
+                          <a
+                            href="{{ asset('storage/' . $cert->pdf_path) }}"
+                            download
+                            class="text-blue-600 hover:underline"
+                            title="ISO 9001"
+                          >
+                            <i class="fas fa-download"></i>
+                          </a>
+                        @else
+                          <span class="text-gray-400 italic">No File</span>
+                        @endif
+                      </td>
+                    </tr>
+                    @endforeach
                     </tbody>
                   </table>
                 </div>
@@ -335,7 +361,20 @@
                         <td class="py-1 px-3 font-normal">{{ $cert->branch }}</td>
                         <td class="py-1 px-3 font-normal">{{ $cert->start_date }}</td>
                         <td class="py-1 px-3 font-normal">{{ $cert->expired_date }}</td>
-                        <td class="py-1 px-3 font-normal">Click Here</td>
+                      <td class="py-1 px-3 font-normal text-center">
+                        @if ($cert->pdf_path)
+                          <a
+                            href="{{ asset('storage/' . $cert->pdf_path) }}"
+                            download
+                            class="text-blue-600 hover:underline"
+                            title="ISO 45001"
+                          >
+                            <i class="fas fa-download"></i>
+                          </a>
+                        @else
+                          <span class="text-gray-400 italic">No File</span>
+                        @endif
+                      </td>
                       </tr>
                       @endforeach
                     </tbody>
@@ -378,7 +417,20 @@
                         <td class="py-1 px-3 font-normal">{{ $cert->branch }}</td>
                         <td class="py-1 px-3 font-normal">{{ $cert->start_date }}</td>
                         <td class="py-1 px-3 font-normal">{{ $cert->expired_date }}</td>
-                        <td class="py-1 px-3 font-normal">Click Here</td>
+                      <td class="py-1 px-3 font-normal text-center">
+                        @if ($cert->pdf_path)
+                          <a
+                            href="{{ asset('storage/' . $cert->pdf_path) }}"
+                            download
+                            class="text-blue-600 hover:underline"
+                            title="Download Dokumen"
+                          >
+                            <i class="fas fa-download"></i>
+                          </a>
+                        @else
+                          <span class="text-gray-400 italic">No File</span>
+                        @endif
+                      </td>
                       </tr>
                       @endforeach
                     </tbody>

@@ -19,22 +19,22 @@ Route::get('/index', function () {
     // ISO 9001
     $totalIso9001 = Iso9001::count();
     $activeIso9001 = Iso9001::where('expired_date', '>=', $today)->count();
-    $iso9001Certificates = Iso9001::select('no_certification', 'start_date', 'expired_date', 'branch')->get();
+    $iso9001Certificates = Iso9001::select('no_certification', 'start_date', 'expired_date', 'pdf_path', 'branch')->get();
 
     // ISO 14001
     $totalIso14001 = Iso14001::count();
     $activeIso14001 = Iso14001::where('expired_date', '>=', $today)->count();
-    $iso14001Certificates = Iso14001::select('no_certification', 'start_date', 'expired_date', 'branch')->get();
+    $iso14001Certificates = Iso14001::select('no_certification', 'start_date', 'expired_date', 'pdf_path', 'branch')->get();
 
     // ISO 37001
     $totalIso37001 = Iso37001::count();
     $activeIso37001 = Iso37001::where('expired_date', '>=', $today)->count();
-    $iso37001Certificates = Iso37001::select('no_certification', 'start_date', 'expired_date', 'branch')->get();
+    $iso37001Certificates = Iso37001::select('no_certification', 'start_date', 'expired_date', 'pdf_path', 'branch')->get();
 
     // ISO 45001
     $totalIso45001 = Iso45001::count();
     $activeIso45001 = Iso45001::where('expired_date', '>=', $today)->count();
-    $iso45001Certificates = Iso45001::select('no_certification', 'start_date', 'expired_date', 'branch')->get();
+    $iso45001Certificates = Iso45001::select('no_certification', 'start_date', 'expired_date', 'pdf_path', 'branch')->get();
 
     return view('index', compact(
         'totalIsps',
@@ -61,7 +61,7 @@ Route::get('/index', function () {
 
 
 Route::get('/', function () {
-    return view('');
+    return view('index');
 });
 
 

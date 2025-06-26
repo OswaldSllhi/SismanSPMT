@@ -53,7 +53,7 @@ class ListIsps extends ListRecords
 //             ->where('data->title', $notifTitle)
 //             ->where('data->body', $notifBody)
 //             ->exists();
-
+    
 //         if (!$alreadyExists) {
 //             Notification::make()
 //                 ->title($notifTitle)
